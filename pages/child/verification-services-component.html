@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/main.min.css">
+    <link rel="stylesheet" href="../../assets/css/verification-services.css">
+    <title>Verification Services Component - خدمات التحقق</title>
+</head>
+<body class="bg-light">
+    <!-- Container to show the component in isolation -->
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                
+                <!-- START: Verification Services Inner Dashboard Section Component -->
+                <!-- This is the reusable component that can be integrated into any dashboard layout -->
+                <section class="verification-services-section" id="verification-services-component">
+                    <div class="container">
+                        <!-- Section Header -->
+                        <div class="section-header">
+                            <h1 class="section-title">خدمات إدارة التوثيق</h1>
+                            <p class="section-description">
+                                تمكنك هذه الخدمة من التحقق من الوثائق الصادرة من وزارة العدل إلكترونياً
+                            </p>
+                        </div>
+
+                        <!-- Services Cards Grid -->
+                        <div class="services-grid">
+
+                            <!-- Powers of Attorney Card -->
+                            <div class="service-card" data-service="powers-of-attorney">
+                                <div class="service-icon-container">
+                                    <img src="../../assets/images/img_icon_blue_900_62x62.svg" alt="التوكيلات" class="service-icon" />
+                                </div>
+                                <div class="service-content">
+                                    <div class="service-info">
+                                        <h3 class="service-name">التوكيلات</h3>
+                                        <a href="#" class="service-link">
+                                            <span class="service-link-text">عرض التفاصيل</span>
+                                           <img src="../../assets/images/img_vector_47_blue_900.svg" alt="arrow" class="service-arrow" style="width: 12px; height: 12px; transform: rotate(0deg);" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                             <!-- Declarations Card -->
+                            <div class="service-card" data-service="declarations">
+                                <div class="service-icon-container">
+                                    <img src="../../assets/images/img_icon_blue_900.svg" alt="إقرارات" class="service-icon" />
+                                </div>
+                                <div class="service-content">
+                                    <div class="service-info">
+                                        <h3 class="service-name">إقرارات</h3>
+                                        <a href="#" class="service-link">
+                                           
+                                            <span class="service-link-text">عرض التفاصيل</span>
+                                             <img src="../../assets/images/img_vector_47_blue_900.svg" alt="arrow" class="service-arrow" style="width: 12px; height: 12px; transform: rotate(0deg);" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Company Contracts Card -->
+                            <div class="service-card" data-service="company-contracts">
+                                <div class="service-icon-container">
+                                    <img src="../../assets/images/img_icon.svg" alt="عقود شركات" class="service-icon" />
+                                </div>
+                                <div class="service-content">
+                                    <div class="service-info">
+                                        <h3 class="service-name">عقود شركات</h3>
+                                        <a href="#" class="service-link">
+                                           
+                                            <span class="service-link-text">عرض التفاصيل</span>
+                                             <img src="../../assets/images/img_vector_47_blue_900.svg" alt="arrow" class="service-arrow" style="width: 12px; height: 12px; transform: rotate(0deg);" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+                <!-- END: Verification Services Inner Dashboard Section Component -->
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript for interactivity -->
+    <script>
+        // Add click handlers for the service cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceLinks = document.querySelectorAll('.service-link');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            // Handle service link clicks
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const serviceCard = this.closest('.service-card');
+                    const serviceType = serviceCard.getAttribute('data-service');
+
+                    // Placeholder for navigation or modal opening
+                    console.log(`Navigating to ${serviceType} service details`);
+
+                    // You can replace this with actual navigation logic
+                    // window.location.href = `/services/${serviceType}`;
+                    // or open a modal, etc.
+                });
+            });
+
+            // Handle service card clicks (entire card clickable)
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const serviceLink = this.querySelector('.service-link');
+                    if (serviceLink) {
+                        serviceLink.click();
+                    }
+                });
+
+                // Add keyboard support for cards
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
