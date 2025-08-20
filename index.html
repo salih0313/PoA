@@ -1,12 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.min.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1 class="bg-primary">Hi</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <title>POA</title>
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+  </head>
+  <body dir="rtl">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="assets/images/logo.png" alt="Small Logo" height="40" />
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"> الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> التقارير</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fas fa-cog me-1"></i> الإعدادات</a
+              >
+            </li>
+          </ul>
+
+          <button class="btn mx-2">English</button>
+          <button class="btn btn-primary rounded-5 mx-3 px-4">عربي</button>
+          <div class="dropdown">
+            <a
+              href="#"
+              class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
+              id="dropdownUser"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="assets/images/user.png"
+                alt="User"
+                class="rounded-circle ms-3"
+                width="32"
+                height="32"
+              />
+              <span class="">على احمد </span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownUser">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-user me-2"></i> الملف الشخصي</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-cog me-2"></i> الإعدادات</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-sign-out-alt me-2"></i> تسجيل الخروج</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content sidebar-open" id="mainContent">
+      <div class="sub-header text-end p-3">
+        <div class="align-items-center d-flex gap-3">
+          <div>
+            <i
+              class="bg-white bi bi-arrow-bar-left chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
+            ></i>
+          </div>
+          <div>
+            <h3 class="mb-0 text-primary fw-bold">مرحبا علي</h3>
+            <h6 class="mb-0 text-primary">الثلاثاء، 20 أغسطس 2025</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid page-container">hello</div>
+
+      <!-- Chat Sidebar -->
+      <!-- <div class="sidebar show chatSidebar" id="chatSidebar">
+        <div class="d-flex justify-content-between mx-2 mt-3">
+          <div>
+            <h3 class="title">تحدث مع <span>عدل</span></h3>
+          </div>
+          <div>
+            <i
+              class="bg-white bi bi-arrow-bar-right chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
+            ></i>
+          </div>
+        </div>
+        <div class="conversation">
+          <ul>
+            <li class="sent">
+              <div>
+                <p>Hi hello</p>
+                <p>last sent ...</p>
+              </div>
+            </li>
+            <li class="sent">
+              <div>
+                <p>Hi hello</p>
+                <p>last sent ...</p>
+              </div>
+            </li>
+            <li class="recieved">
+              <div>
+                <p>Hi hello</p>
+                <p>last sent ...</p>
+              </div>
+            </li>
+          </ul>
+          <div class="suggestion">
+            <div class="d-flex">
+              <div>tag 1</div>
+              <div>tag 2</div>
+              <div>tag 3</div>
+              <div>tag 4</div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input"></div>
+      </div> -->
+
+      <div class="sidebar chatSidebar d-flex flex-column" id="chatSidebar">
+        <!-- Header -->
+        <div
+          class="chat-header d-flex justify-content-between align-items-center px-3 py-2 mt-3"
+        >
+          <h5 class="m-0 fw-bold text-primary">تحدث مع <span>عدل</span></h5>
+          <i
+            class="bg-white bi bi-arrow-bar-right chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
+          ></i>
+        </div>
+
+        <!-- Conversation body -->
+        <div class="chat-body flex-grow-1 overflow-auto px-3 py-3">
+          <ul class="chat-messages list-unstyled m-0 p-0">
+            <li class="chat-message sent mb-3">
+              <div class="bubble">
+                <p class="m-0">السلام عليكم 👋</p>
+              </div>
+              <small class="text-muted d-block mt-1">Today, 11:28 AM</small>
+            </li>
+            <li class="chat-message received mb-3">
+              <div class="bubble">
+                <p class="m-0">وعليكم السلام ورحمة الله وبركاته 🌟</p>
+              </div>
+              <small class="text-muted d-block mt-1">Today, 11:30 AM</small>
+            </li>
+          </ul>
+
+          <!-- Suggestions -->
+          <div class="chat-suggestions mt-3">
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                ما هي خدماتكم؟
+              </button>
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                كيف أبدأ؟
+              </button>
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                أحتاج مساعدة
+              </button>
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                تواصل معي
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="chat-input p-2">
+          <div class="input">
+            <textarea
+              type="text"
+              class="w-100 bg-white border-0"
+              placeholder="type something.."
+            ></textarea>
+
+            <div class="align-items-center d-flex justify-content-between">
+              <div class="send-options">
+                <i class="bi bi-plus"></i>
+                <i class="bi bi-mic-fill"></i>
+                <i class="bi bi-stars"></i>
+              </div>
+              <div class="send-btn">
+                <img src="assets/icons/send-icon.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
 </html>
