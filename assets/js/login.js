@@ -11,6 +11,4 @@ $(document).ready(function () {
     $(".login-option").toggle();
     $(".login-paci-form").toggle();
   });
-
-  back-login-option
 });
