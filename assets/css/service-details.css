@@ -1,0 +1,136 @@
+.light-gray-text {
+    font-size: 18px;
+    color: #68747a;
+    margin: 0;
+}
+
+.black-text {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+}
+
+.custom-accordion {
+    border: none;
+    background: transparent;
+}
+
+.custom-accordion .accordion-item {
+    border: none;
+    background: transparent;
+    margin-bottom: 1rem;
+}
+
+.custom-accordion .accordion-button {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    padding: 1rem 0;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: right;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: transparent;
+    color: #333;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    margin-left: 0;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg);
+}
+
+.custom-accordion .accordion-collapse {
+    border: none;
+}
+
+.custom-accordion .accordion-body {
+    background: transparent;
+    padding: 0 0 1rem 0;
+    color: #666;
+    line-height: 1.6;
+    border: none;
+}
+
+.custom-accordion .accordion-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-accordion .accordion-body li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-right: 1rem;
+}
+
+.custom-accordion .accordion-body li::before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    right: 0;
+}
+
+/* Default: full width on mobile */
+.responsive-service-details {
+    width: 100%;
+    padding: 10px;
+}
+
+.responsive-main {
+    width: 100%;
+    padding: 10px;
+}
+
+.service-details-main-wrapper {
+    padding: 15px 20px;
+}
+
+/* Medium screens (tablets): sidebar 25%, main 75% */
+@media (min-width: 768px) {
+    .responsive-service-details {
+        width: 25%;
+    }
+
+    .responsive-main {
+        width: 75%;
+    }
+
+    .service-details-main-wrapper {
+        padding: 25px 35px;
+    }
+}
+
+/* Large screens (desktop): sidebar 20%, main 80% */
+@media (min-width: 992px) {
+    .responsive-service-details {
+        width: 20%;
+    }
+
+    .responsive-main {
+        width: 80%;
+    }
+
+    .service-details-main-wrapper {
+        padding: 30px 50px;
+    }
+}
