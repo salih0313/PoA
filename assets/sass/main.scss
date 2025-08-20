@@ -1,0 +1,28 @@
+
+
+
+// #1A428A = Header / primary blue
+// #2F64C0 = Accent blue (icons, buttons)
+// #6E93D6 = Lighter blue (gradients)
+// #F4F7FB = Light grey background panels
+// #FFFFFF = White (main background, text areas)
+// #000000 = Black (primary text)
+// #444444 = Dark grey (secondary text)
+
+
+// Customize
+$primary:       #1A428A;
+$secondary:     #444444;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+$light:         #F4F7FB;
+$dark:          #444444;
+
+
+// import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
