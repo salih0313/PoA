@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/main.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>POA</title>
+    <link rel="stylesheet" href="../assets/css/main.min.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <link rel="stylesheet" href="../assets/css/call-sidebar.css" />
+    <link rel="stylesheet" href="../assets/css/service-details.css" />
+</head>
+
+<style>
+    body {
+        height: 100vh;
+        background: linear-gradient(#FFFFFF, #E8F0F9);
+    }
+
+    .responsive-w {
+        width: 50%;
+    }
+
+    /* Remove background on mobile */
+    @media (max-width: 767px) {
+        body {
+            background: none;
+        }
+
+        .responsive-w {
+            width: 100%;
+        }
+    }
+</style>
+
+<body dir="rtl" class="overflow-y-auto">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="sidebar" id="leftSidebar">
+        <div class="sidebar-header">
+            <h5 class="mb-0">طلب مراجعة</h5>
+            <button class="sidebar-close" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <p class="mb-3 mt-3 pe-4 fw-bold">
+            كيف تود مراجعة الطلب الخاص بك اليوم؟
+        </p>
+
+        <div class="d-flex flex-column gap-5 p-3">
+            <!-- TODO: Update this button to support iframe for calling -->
+            <!-- NOTE: like so -> <iframe src="https://poakwibot.dev.techunicornpreprod.com/?teamsLink=<replace this with teams link>" allow="microphone; camera; display-capture" /> -->
+            <button class="d-flex py-4 flex-column align-items-center justify-content-center gap-3 btn btn-link"
+                style="border: 1px solid #D1DADF; text-decoration: none; background: linear-gradient(to bottom, #E8F0F9, #FFFFFF);">
+                <i class="fas fa-video fa-2x"></i>
+                <div class="d-flex flex-column">
+                    <p class="mb-0 text-primary fw-bold">اتصل الآن</p>
+                    <p class="mb-0">تواصل مع موظف من وزارة العدل</p>
+                </div>
+            </button>
+            <button class="d-flex py-4 flex-column align-items-center justify-content-center gap-3 btn btn-link"
+                style="border: 1px solid #D1DADF; text-decoration: none; background: linear-gradient(to bottom, #E8F0F9, #FFFFFF);">
+                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M36.4942 3.12437H35.0462V1.6764C35.0462 0.807613 34.4671 0.228424 33.5983 0.228424C32.7295 0.228424 32.1503 0.807613 32.1503 1.6764V3.12437H26.3584V1.6764C26.3584 0.807613 25.7792 0.228424 24.9104 0.228424C24.0417 0.228424 23.4625 0.807613 23.4625 1.6764V3.12437H17.6706V1.6764C17.6706 0.807613 17.0914 0.228424 16.2226 0.228424C15.3538 0.228424 14.7746 0.807613 14.7746 1.6764V3.12437H8.98275V1.6764C8.98275 0.807613 8.40356 0.228424 7.53478 0.228424C6.666 0.228424 6.08681 0.807613 6.08681 1.6764V3.12437H4.63884C2.17728 3.12437 0.294922 5.00673 0.294922 7.46828V11.8122H40.8381V7.46828C40.8381 5.00673 38.9558 3.12437 36.4942 3.12437ZM29.2544 8.91625H11.8787C11.0099 8.91625 10.4307 8.33706 10.4307 7.46828C10.4307 6.5995 11.0099 6.02031 11.8787 6.02031H29.2544C30.1231 6.02031 30.7023 6.5995 30.7023 7.46828C30.7023 8.33706 30.1231 8.91625 29.2544 8.91625ZM19.1186 21.948C17.9602 21.948 16.9466 22.3824 16.0778 23.2512C15.209 24.12 14.7746 25.1335 14.7746 26.2919C14.7746 28.7535 16.657 30.6358 19.1186 30.6358C20.2769 30.6358 21.4353 30.2014 22.1593 29.3327C22.8833 28.4639 23.4625 27.4503 23.4625 26.2919C23.4625 23.8304 21.5801 21.948 19.1186 21.948Z"
+                        fill="#0033A0" />
+                    <path
+                        d="M0.294922 14.7081V36.4277C0.294922 38.8892 2.17728 40.7716 4.63884 40.7716H36.4942C38.9558 40.7716 40.8381 38.8892 40.8381 36.4277V14.7081H0.294922ZM28.82 35.9933C28.5304 36.2829 28.2408 36.4277 27.8064 36.4277C27.372 36.4277 27.0824 36.2829 26.7928 35.9933L23.1729 32.3734C21.8697 33.0973 20.5665 33.5317 19.1186 33.5317C15.0642 33.5317 11.8787 30.3462 11.8787 26.2919C11.8787 24.4095 12.6027 22.5271 14.0507 21.224C15.4986 19.776 17.2362 19.052 19.1186 19.052C23.1729 19.052 26.3584 22.2376 26.3584 26.2919C26.3584 27.7398 25.924 29.043 25.2 30.3462L28.82 33.9661C29.3992 34.5453 29.3992 35.4141 28.82 35.9933Z"
+                        fill="#0033A0" />
+                </svg>
+                <div class="d-flex flex-column">
+                    <p class="mb-0 text-primary fw-bold">احجز موعد</p>
+                    <p class="mb-0">رتب موعدك في الوقت المناسب لك</p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-white">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="d-flex align-items-center justify-content-center gap-2 pe-4">
+                <img src="../assets/images/logo.png" alt="Small Logo" height="60" />
+                <p class="fs-3 fw-bold mb-0">نظام التوثيق</p>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">خدمة الأونلاين</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">خدمات التحقق</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link" href="#">خدمات الترخيص </a>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934" stroke="black" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="nav-link" href="#">تواصل معنا</a>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934" stroke="black" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </li>
+                </ul>
+
+                <button class="btn mx-2">English</button>
+                <button class="btn btn-primary rounded-5 mx-3 px-4">عربي</button>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
+                        id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../assets/images/user.png" alt="User" class="rounded-circle ms-3" width="32"
+                            height="32" />
+                        <span class="">على احمد </span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownUser">
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> الملف الشخصي</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> الإعدادات</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> تسجيل الخروج</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-100 mb-3" id="mainContent">
+        <div class="sub-header text-end p-3">
+            <div class="align-items-center d-flex gap-3">
+                <div>
+                    <h3 class="text-primary fw-bold">مرحبا علي</h3>
+                    <div class="d-flex flex-row align-items-center justify-content-center pb-0 gap-3">
+                        <div>
+                            <i
+                                class="bg-white bi bi-arrow-bar-left chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"></i>
+                        </div>
+                        <p class="mb-0 fs-5">التوكيلات</p>
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.43652 1.94453L1.92379 9L8.43652 16.0555" stroke="black" stroke-width="2.17091"
+                                stroke-linecap="round" />
+                        </svg>
+                        <p class="mb-0 fs-5">التحقق من رقم بطاقتك المدنية</p>
+                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.43652 1.94453L1.92379 9L8.43652 16.0555" stroke="black" stroke-width="2.17091"
+                                stroke-linecap="round" />
+                        </svg>
+                        <p class="mb-0 fw-bold fs-5">Template 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column px-md-5 px-2">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-1 gap-3 gap-md-0">
+            <div class="d-flex flex-wrap gap-4 align-items-center">
+                <p class="text-black fs-4 mb-0">
+                    اللغة المكتشفة:
+                    <span class="fw-bold">
+                        العربية (الكويت)
+                    </span>
+                </p>
+                <p class="text-black mb-0">
+                    ترجم إلى
+                </p>
+                <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.5266 6.75H15.7766C16.108 6.75043 16.4257 6.88226 16.66 7.11659C16.8943 7.35092 17.0262 7.66861 17.0266 8V9.25C17.0266 9.58152 17.1583 9.89946 17.3927 10.1339C17.6271 10.3683 17.9451 10.5 18.2766 10.5C18.6081 10.5 18.9261 10.3683 19.1605 10.1339C19.3949 9.89946 19.5266 9.58152 19.5266 9.25V8C19.5255 7.00577 19.1301 6.05257 18.427 5.34955C17.724 4.64652 16.7708 4.25108 15.7766 4.25H14.5266C14.1951 4.25 13.8771 4.38169 13.6427 4.61611C13.4083 4.85053 13.2766 5.16848 13.2766 5.5C13.2766 5.83152 13.4083 6.14946 13.6427 6.38388C13.8771 6.6183 14.1951 6.75 14.5266 6.75ZM9.52659 18H8.27659C7.9452 17.9996 7.62751 17.8677 7.39318 17.6334C7.15886 17.3991 7.02702 17.0814 7.02659 16.75V15.5C7.02659 15.1685 6.8949 14.8505 6.66048 14.6161C6.42606 14.3817 6.10811 14.25 5.77659 14.25C5.44507 14.25 5.12713 14.3817 4.89271 14.6161C4.65829 14.8505 4.52659 15.1685 4.52659 15.5V16.75C4.52768 17.7442 4.92311 18.6974 5.62614 19.4004C6.32917 20.1035 7.28236 20.4989 8.27659 20.5H9.52659C9.85811 20.5 10.1761 20.3683 10.4105 20.1339C10.6449 19.8995 10.7766 19.5815 10.7766 19.25C10.7766 18.9185 10.6449 18.6005 10.4105 18.3661C10.1761 18.1317 9.85811 18 9.52659 18ZM23.2766 16.75C23.6081 16.75 23.9261 16.6183 24.1605 16.3839C24.3949 16.1495 24.5266 15.8315 24.5266 15.5C24.5266 15.1685 24.3949 14.8505 24.1605 14.6161C23.9261 14.3817 23.6081 14.25 23.2766 14.25H19.5266V13.625C19.5266 13.2935 19.3949 12.9755 19.1605 12.7411C18.9261 12.5067 18.6081 12.375 18.2766 12.375C17.9451 12.375 17.6271 12.5067 17.3927 12.7411C17.1583 12.9755 17.0266 13.2935 17.0266 13.625V14.25H13.2766C12.9451 14.25 12.6271 14.3817 12.3927 14.6161C12.1583 14.8505 12.0266 15.1685 12.0266 15.5C12.0266 15.8315 12.1583 16.1495 12.3927 16.3839C12.6271 16.6183 12.9451 16.75 13.2766 16.75H19.7569C19.4741 17.8988 18.9521 18.975 18.225 19.9083C17.9275 19.5226 17.6643 19.1116 17.4386 18.6799C17.3637 18.5339 17.2608 18.404 17.1358 18.2978C17.0107 18.1915 16.866 18.1109 16.7098 18.0606C16.5536 18.0102 16.389 17.9912 16.2254 18.0044C16.0619 18.0177 15.9025 18.0631 15.7565 18.1379C15.6104 18.2128 15.4806 18.3157 15.3743 18.4407C15.268 18.5658 15.1874 18.7106 15.1371 18.8667C15.0354 19.1822 15.0633 19.5251 15.2145 19.8201C15.5511 20.4706 15.9528 21.0854 16.4133 21.6551C15.5064 22.3136 14.4752 22.7809 13.3822 23.0287C13.0588 23.1001 12.777 23.2967 12.5985 23.5756C12.42 23.8545 12.3595 24.1927 12.4301 24.5162C12.5008 24.8397 12.6968 25.1219 12.9753 25.301C13.2538 25.4801 13.592 25.5413 13.9156 25.4714C15.484 25.1245 16.9551 24.432 18.2218 23.4443C19.4992 24.4325 20.9801 25.1247 22.5576 25.4708C22.7179 25.5061 22.8836 25.5095 23.0452 25.4808C23.2068 25.4522 23.3612 25.3919 23.4996 25.3036C23.6379 25.2152 23.7575 25.1005 23.8515 24.9659C23.9455 24.8313 24.0121 24.6795 24.0474 24.5192C24.0828 24.3589 24.0862 24.1932 24.0575 24.0316C24.0288 23.87 23.9686 23.7156 23.8802 23.5772C23.7919 23.4389 23.6771 23.3193 23.5425 23.2253C23.408 23.1313 23.2562 23.0647 23.0959 23.0294C21.9956 22.7847 20.9558 22.3214 20.0383 21.6667C21.1941 20.2439 21.9732 18.5531 22.3037 16.75H23.2766ZM8.31379 12.0533C8.39506 12.3741 8.60019 12.6496 8.88421 12.8193C9.16823 12.9891 9.50798 13.0394 9.82899 12.9591C10.15 12.8788 10.4261 12.6745 10.5967 12.391C10.7674 12.1075 10.8186 11.7679 10.7393 11.4466L8.54267 2.65942C8.38838 2.0426 8.03234 1.49504 7.53115 1.10378C7.02997 0.71252 6.41238 0.5 5.77655 0.5C5.14073 0.5 4.52314 0.71252 4.02196 1.10378C3.52077 1.49504 3.16473 2.0426 3.01044 2.65942L0.813792 11.4466C0.734477 11.7679 0.785761 12.1075 0.956403 12.391C1.12705 12.6745 1.40313 12.8788 1.72413 12.9591C2.04514 13.0394 2.38489 12.9891 2.66891 12.8193C2.95293 12.6496 3.15806 12.3741 3.23933 12.0533L3.94009 9.25H7.61303L8.31379 12.0533ZM4.56509 6.75L5.43598 3.26611C5.46214 3.19695 5.50874 3.13739 5.56958 3.09536C5.63042 3.05332 5.70261 3.03081 5.77655 3.03081C5.8505 3.03081 5.92269 3.05332 5.98353 3.09536C6.04437 3.13739 6.09097 3.19695 6.11713 3.26611L6.98803 6.75H4.56509Z"
+                        fill="#0033A0" />
+                </svg>
+                <div class="dropdown" style="max-width: 400px;">
+                    <button style="border: 1px solid #D1DADF;"
+                        class="py-2 btn btn-outline-secondary w-100 text-start rounded-3 bg-white px-5" type="button"
+                        data-bs-toggle="dropdown">
+                        Language
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.66605 7.22965L0 1.5636L0.793247 0.770355L5.66605 5.64316L10.5389 0.770355L11.3321 1.5636L5.66605 7.22965Z"
+                                fill="#212529" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu w-100 rounded-4 shadow">
+                        <li><a class="dropdown-item py-2" href="#">English</a></li>
+                        <li><a class="dropdown-item py-2" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item py-2" href="#">Tagalog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 align-items-center bg-white rounded-5"
+                style="max-width: 500px; border: 1px solid #D1DADF;">
+                <button class="btn btn-primary rounded-pill px-4 py-2 fw-bold fs-5">
+                    النموذج الأصلي
+                </button>
+                <button class="btn text-primary fw-bold fs-5" style="background: none; border: none;">
+                    تعديل
+                </button>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2" style="max-width: 800px;">
+                <span class="badge text-success rounded-3 d-flex align-items-center gap-1 px-3 py-2">
+                    <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.593545" y="1.3328" width="19.3344" height="19.3344" rx="9.6672" fill="white" />
+                        <rect x="0.593545" y="1.3328" width="19.3344" height="19.3344" rx="9.6672" stroke="#009A44"
+                            stroke-width="1.18709" />
+                        <path d="M4.51953 11.5233L6.74602 14.1382L16.0021 7.86179" stroke="#009A44"
+                            stroke-width="1.78063" />
+                    </svg>
+                    <span class="fw-bold fs-6">تم الحفظ تلقائيًا</span>
+                    <span class="text-white">✓</span>
+                </span>
+                <button class="btn bg-white text-primary rounded-3 px-4 py-2 fw-bold">
+                    الغاء
+                </button>
+                <button class="btn bg-white text-primary rounded-3 px-4 py-2 fw-bold" id="reviewRequestBtn">
+                    طلب مراجعة
+                </button>
+                <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold">
+                    التقديم مباشرة
+                </button>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column align-items-center justify-content-start fw-400 pt-md-3 overflow-y-auto"
+            style="height: calc(100vh - 350px); width: 100%;">
+            <div class="d-flex flex-column gap-3 responsive-w">
+                <div class="d-none d-md-flex flex-column gap-2 align-items-center mb-2">
+                    <img style="height: 75px; width: 75px;" src="../assets/images/logo.png" alt="Small Logo" />
+                    <p class="text-black fw-bold">الوكالة العامة (داخل وخارج الكويت)</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                    <p class="text-nowrap mb-0">إنه قيد التشغيل بتاريخ</p>
+                    <input type="text" class="form-control rounded-3 py-2 text-secondary" placeholder="يوم/شهر/سنة"
+                        style="border: 2px solid #e9ecef; font-size: 16px; height: fit-content; width: fit-content;">
+                    <p class="mb-0">في تمام الساعة</p>
+                    <div class="dropdown">
+                        <button style="border: 1px solid #D1DADF; min-width: 150px;"
+                            class="d-flex py-2 align-items-center justify-content-between gap-3 btn btn-outline-secondary w-100 text-start rounded-3 bg-white"
+                            type="button" data-bs-toggle="dropdown">
+                            <p class="text-secondary mb-0">
+                                الوقت
+                            </p>
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.66605 7.22965L0 1.5636L0.793247 0.770355L5.66605 5.64316L10.5389 0.770355L11.3321 1.5636L5.66605 7.22965Z"
+                                    fill="#212529" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu w-100 rounded-4 shadow">
+
+                        </ul>
+                    </div>
+                    <p class="text-nowrap mb-0">، حيث أصدر الموكل</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                    <input type="text" class="form-control rounded-3 py-2 text-secondary" placeholder="بالنيابة عن"
+                        style="border: 2px solid #e9ecef; font-size: 16px; height: fit-content; width: fit-content;">
+                    <p class="text-nowrap mb-0">هذه الوكالة لصالح</p>
+                    <input type="text" class="form-control rounded-3 py-2 text-secondary" placeholder="ممنوحة لـ"
+                        style="border: 2px solid #e9ecef; font-size: 16px; height: fit-content; width: fit-content;">
+                    <p class="text-nowrap mb-0">، وذلك لإدارة ممتلكاته في أي مكان، الحاضر والمستقبل، من العقارات
+                        والمنقولات
+                        وكل</p>
+                </div>
+                <p class="text-black mb-0">ما يسمى مالًا، وتأجيرها لمن يشاء وتأجيرها وفقًا للشروط التي يراها، وتوقيع
+                    عقود الإيجار لها وتجديدها وإلغائها، وجمع الإيجارات وإعطاء التصاريح اللازمة</p>
+                <p class="text-black mb-0">لذلك، وإجراء الإصلاحات والترميمات والبناء على الممتلكات، والتعاقد مع
+                    المهندسين والمقاولين والعمال والاتفاق معهم بشأن أسعار البناء ومواد البناء.
+                </p>
+                <p class="text-black mb-0">
+                    ويمثله أمام لجان التقييم في حالة الاستيلاء على جزء أو كامل الممتلكات واستلام التعويض المستحق عن ذلك،
+                    وتنفيذ مديونية المدينين، وتسجيل الرهن وتجديده وإلغائه، ويمثله أمام قلم القضاء، والبلدية، وإدارات
+                    التسجيل العقاري والتوثيق، وأمام جميع الوزارات والهيئات والمؤسسات الحكومية بما في ذلك الإدارة العامة
+                    لشؤون الإقامة، والهيئة العامة للقوى العاملة وجميع أقسامها، وبرنامج إعادة هيكلة القوى العاملة،
+                    والجهاز التنفيذي للدولة، والهيئة العامة لشؤون ذوي الإعاقة، وإدارة الإطفاء العامة، ووزارة الداخلية
+                    وإداراتها المختلفة بما في ذلك قسم الجنسية، والإدارة العامة لشؤون الهجرة، وإدارة المرور، والمؤسسة
+                    العامة للرعاية السكنية، ووزارة الشؤون الاجتماعية والعمل، والمؤسسة العامة للتأمينات الاجتماعية، وجميع
+                    الوزارات الحكومية والدوائر واللجان الأخرى غير الحكومية، وتوقيع الأوراق والسجلات اللازمة وتقديم وسحب
+                    جميع المستندات، والتأمينات، والرسوم وما شابه ذلك.
+                </p>
+            </div>
+        </div>
+        <div class="responsive-w bg-white rounded-4 shadow-sm p-3 justify-self-end align-self-center">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-link p-0" style="width: 40px; height: 40px;">
+                    <svg width="19" height="26" viewBox="0 0 19 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.0838 6.82381C3.0838 3.05512 6.13892 0 9.90761 0C13.6763 0 16.7314 3.05513 16.7314 6.82381V10.9499C16.7314 14.7186 13.6763 17.7737 9.90761 17.7737C6.13892 17.7737 3.0838 14.7186 3.0838 10.9499V6.82381Z"
+                            fill="#006ED2" />
+                        <path
+                            d="M2.14996 13.0895C2.48717 17.0781 5.83143 20.2102 9.90723 20.2102C13.983 20.2102 17.3273 17.0781 17.6645 13.0895C17.6954 12.7236 17.9902 12.4249 18.3574 12.4249C18.7246 12.4249 19.0248 12.7236 18.9984 13.0899C18.6578 17.8135 14.7177 21.54 9.90723 21.54C5.09676 21.54 1.15664 17.8135 0.816072 13.0899C0.789665 12.7236 1.08987 12.4249 1.45709 12.4249C1.8243 12.4249 2.11902 12.7236 2.14996 13.0895Z"
+                            fill="#006ED2" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.90824 22.7142C10.34 22.7142 10.6901 22.8591 10.6901 23.038V25.23C10.6901 25.4088 10.34 25.5538 9.90824 25.5538C9.47642 25.5538 9.12637 25.4088 9.12637 25.23V23.038C9.12637 22.8591 9.47642 22.7142 9.90824 22.7142Z"
+                            fill="#006ED2" />
+                    </svg>
+                </button>
+                <input type="text" class="form-control border-0 fs-5"
+                    placeholder="اكتب او تحدث الى الروبوت الذكي لمساعدتك للاضافة على النص"
+                    style="background: transparent; outline: none; box-shadow: none;">
+                <button class="btn btn-link p-0" style="width: 40px; height: 40px;">
+                    <img style="height: 25px; width: 25px;" src="../assets/images/chat-submit.png" alt="chat-submit">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const reviewBtn = document.getElementById('reviewRequestBtn');
+            const sidebar = document.getElementById('leftSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const closeBtn = document.getElementById('closeSidebar');
+
+            reviewBtn.addEventListener('click', function () {
+                sidebar.classList.add('show');
+                overlay.classList.add('show');
+            });
+
+            closeBtn.addEventListener('click', function () {
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+            });
+
+            overlay.addEventListener('click', function () {
+                sidebar.classList.remove('show');
+                overlay.classList.remove('show');
+            });
+        });
+    </script>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+
+</html>
