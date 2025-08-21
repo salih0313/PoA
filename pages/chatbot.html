@@ -62,6 +62,21 @@
         </div>
     </div>
 
+    <div class="sidebar" id="botSidebar">
+        <div class="sidebar-header">
+            <h5 class="mb-0">تحدث مع عدل</h5>
+            <button class="sidebar-close" id="closeBot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="review" class="d-flex flex-column gap-5">
+            <iframe
+                src="https://copilotstudio.microsoft.com/environments/b19b77aa-4d5c-e2b9-85df-3e70fa82af47/bots/cr0ac_agent_9u9XpA/webchat?__version__=2"
+                frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg sticky-top bg-white">
         <div class="container-fluid">
             <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
@@ -132,7 +147,7 @@
                 <div>
                     <h3 class="text-primary fw-bold">مرحبا علي</h3>
                     <div class="d-flex flex-row align-items-center justify-content-center pb-0 gap-3">
-                        <div>
+                        <div id="botButton">
                             <i
                                 class="bg-white bi bi-arrow-bar-left chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"></i>
                         </div>
@@ -313,6 +328,10 @@
             const overlay = document.getElementById('sidebarOverlay');
             const closeBtn = document.getElementById('closeSidebar');
 
+            const bot = document.getElementById('botSidebar');
+            const botButton = document.getElementById('botButton');
+            const closeBot = document.getElementById('closeBot');
+
             reviewBtn.addEventListener('click', function () {
                 sidebar.classList.add('show');
                 overlay.classList.add('show');
@@ -326,6 +345,14 @@
             overlay.addEventListener('click', function () {
                 sidebar.classList.remove('show');
                 overlay.classList.remove('show');
+            });
+
+            botButton.addEventListener('click', function () {
+                bot.classList.add('show');
+            });
+
+            closeBot.addEventListener('click', function () {
+                bot.classList.remove('show');
             });
         });
     </script>
