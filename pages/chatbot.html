@@ -23,6 +23,15 @@
         width: 50%;
     }
 
+    #review {
+        height: calc(100% - 3.75rem);
+    }
+
+    #review-iframe {
+        height: 100%;
+        width: 100%;
+    }
+
     /* Remove background on mobile */
     @media (max-width: 767px) {
         body {
@@ -46,36 +55,10 @@
             </button>
         </div>
 
-        <p class="mb-3 mt-3 pe-4 fw-bold">
-            كيف تود مراجعة الطلب الخاص بك اليوم؟
-        </p>
-
-        <div class="d-flex flex-column gap-5 p-3">
-            <!-- TODO: Update this button to support iframe for calling -->
-            <!-- NOTE: like so -> <iframe src="https://poakwibot.dev.techunicornpreprod.com/?teamsLink=<replace this with teams link>" allow="microphone; camera; display-capture" /> -->
-            <button class="d-flex py-4 flex-column align-items-center justify-content-center gap-3 btn btn-link"
-                style="border: 1px solid #D1DADF; text-decoration: none; background: linear-gradient(to bottom, #E8F0F9, #FFFFFF);">
-                <i class="fas fa-video fa-2x"></i>
-                <div class="d-flex flex-column">
-                    <p class="mb-0 text-primary fw-bold">اتصل الآن</p>
-                    <p class="mb-0">تواصل مع موظف من وزارة العدل</p>
-                </div>
-            </button>
-            <button class="d-flex py-4 flex-column align-items-center justify-content-center gap-3 btn btn-link"
-                style="border: 1px solid #D1DADF; text-decoration: none; background: linear-gradient(to bottom, #E8F0F9, #FFFFFF);">
-                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M36.4942 3.12437H35.0462V1.6764C35.0462 0.807613 34.4671 0.228424 33.5983 0.228424C32.7295 0.228424 32.1503 0.807613 32.1503 1.6764V3.12437H26.3584V1.6764C26.3584 0.807613 25.7792 0.228424 24.9104 0.228424C24.0417 0.228424 23.4625 0.807613 23.4625 1.6764V3.12437H17.6706V1.6764C17.6706 0.807613 17.0914 0.228424 16.2226 0.228424C15.3538 0.228424 14.7746 0.807613 14.7746 1.6764V3.12437H8.98275V1.6764C8.98275 0.807613 8.40356 0.228424 7.53478 0.228424C6.666 0.228424 6.08681 0.807613 6.08681 1.6764V3.12437H4.63884C2.17728 3.12437 0.294922 5.00673 0.294922 7.46828V11.8122H40.8381V7.46828C40.8381 5.00673 38.9558 3.12437 36.4942 3.12437ZM29.2544 8.91625H11.8787C11.0099 8.91625 10.4307 8.33706 10.4307 7.46828C10.4307 6.5995 11.0099 6.02031 11.8787 6.02031H29.2544C30.1231 6.02031 30.7023 6.5995 30.7023 7.46828C30.7023 8.33706 30.1231 8.91625 29.2544 8.91625ZM19.1186 21.948C17.9602 21.948 16.9466 22.3824 16.0778 23.2512C15.209 24.12 14.7746 25.1335 14.7746 26.2919C14.7746 28.7535 16.657 30.6358 19.1186 30.6358C20.2769 30.6358 21.4353 30.2014 22.1593 29.3327C22.8833 28.4639 23.4625 27.4503 23.4625 26.2919C23.4625 23.8304 21.5801 21.948 19.1186 21.948Z"
-                        fill="#0033A0" />
-                    <path
-                        d="M0.294922 14.7081V36.4277C0.294922 38.8892 2.17728 40.7716 4.63884 40.7716H36.4942C38.9558 40.7716 40.8381 38.8892 40.8381 36.4277V14.7081H0.294922ZM28.82 35.9933C28.5304 36.2829 28.2408 36.4277 27.8064 36.4277C27.372 36.4277 27.0824 36.2829 26.7928 35.9933L23.1729 32.3734C21.8697 33.0973 20.5665 33.5317 19.1186 33.5317C15.0642 33.5317 11.8787 30.3462 11.8787 26.2919C11.8787 24.4095 12.6027 22.5271 14.0507 21.224C15.4986 19.776 17.2362 19.052 19.1186 19.052C23.1729 19.052 26.3584 22.2376 26.3584 26.2919C26.3584 27.7398 25.924 29.043 25.2 30.3462L28.82 33.9661C29.3992 34.5453 29.3992 35.4141 28.82 35.9933Z"
-                        fill="#0033A0" />
-                </svg>
-                <div class="d-flex flex-column">
-                    <p class="mb-0 text-primary fw-bold">احجز موعد</p>
-                    <p class="mb-0">رتب موعدك في الوقت المناسب لك</p>
-                </div>
-            </button>
+        <div id="review" class="d-flex flex-column gap-5">
+            <iframe id="review-iframe"
+                src="https://poakwibot.dev.techunicornpreprod.com/?teamsLink=https://teams.microsoft.com/l/meetup-join/19%3ameeting_MjQxMDExMDMtNjhhOS00YWFkLWFhYWEtYzVhMDBlNTFhZTVm%40thread.v2/0?context=%7b%22Tid%22%3a%22603439c3-58ad-4a91-8ed3-b53e9a8677b3%22%2c%22Oid%22%3a%226b30c92b-faf7-460a-ae64-6de4491474de%22%7d"
+                allow="microphone; camera; display-capture"></iframe>
         </div>
     </div>
 
@@ -242,7 +225,7 @@
             style="height: calc(100vh - 350px); width: 100%;">
             <div class="d-flex flex-column gap-3 responsive-w">
                 <div class="d-none d-md-flex flex-column gap-2 align-items-center mb-2">
-                    <img style="height: 75px; width: 75px;" src="../assets/images/logo.png" alt="Small Logo" />
+                    <img style="height: 60px;" src="../assets/images/logo.png" alt="Small Logo" />
                     <p class="text-black fw-bold">الوكالة العامة (داخل وخارج الكويت)</p>
                 </div>
                 <div class="d-flex flex-wrap gap-2 align-items-center">

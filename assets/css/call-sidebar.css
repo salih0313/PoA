@@ -1,18 +1,19 @@
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px;
+    left: -400px;
+    right: unset;
     height: 100vh;
-    width: 300px;
+    width: 400px;
     background: white;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
     z-index: 1050;
     overflow-y: auto;
 }
 
 .sidebar.show {
-    right: 0;
+    left: 0;
 }
 
 .sidebar-overlay {
