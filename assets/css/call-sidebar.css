@@ -1,4 +1,4 @@
-.sidebar {
+#leftSidebar {
     position: fixed;
     top: 0;
     left: -400px;
@@ -12,8 +12,25 @@
     overflow-y: auto;
 }
 
-.sidebar.show {
+#leftSidebar.show {
     left: 0;
+}
+
+#botSidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    height: 100vh;
+    width: 400px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+#botSidebar.show {
+    right: 0;
 }
 
 .sidebar-overlay {
