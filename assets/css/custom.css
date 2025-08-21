@@ -84,9 +84,15 @@ body {
   font-family: sans-serif;
 }
 
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
+
+
 
 /* Utilization End ###############################  */
 

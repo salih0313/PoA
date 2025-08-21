@@ -27,18 +27,25 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#"> الرئيسية</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> التقارير</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="fas fa-cog me-1"></i> الإعدادات</a
-              >
-            </li>
-          </ul>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"> خدمة الأونلاين</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> خدمات التحقق</a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="#">خدمات الترخيص </a>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a class="nav-link" href="#">تواصل معنا</a>
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </li>
+            </ul>
 
           <button class="btn mx-2">English</button>
           <button class="btn btn-primary rounded-5 mx-3 px-4">عربي</button>
@@ -57,7 +64,7 @@
                 width="32"
                 height="32"
               />
-              <span class="">على احمد </span>
+              <span class="">على احمد </span> <i class="bi bi-chevron-down mx-2 text-primary"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownUser">
               <li>
@@ -98,52 +105,9 @@
         </div>
       </div>
 
-      <div class="container-fluid page-container">hello</div>
-
-      <!-- Chat Sidebar -->
-      <!-- <div class="sidebar show chatSidebar" id="chatSidebar">
-        <div class="d-flex justify-content-between mx-2 mt-3">
-          <div>
-            <h3 class="title">تحدث مع <span>عدل</span></h3>
-          </div>
-          <div>
-            <i
-              class="bg-white bi bi-arrow-bar-right chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
-            ></i>
-          </div>
-        </div>
-        <div class="conversation">
-          <ul>
-            <li class="sent">
-              <div>
-                <p>Hi hello</p>
-                <p>last sent ...</p>
-              </div>
-            </li>
-            <li class="sent">
-              <div>
-                <p>Hi hello</p>
-                <p>last sent ...</p>
-              </div>
-            </li>
-            <li class="recieved">
-              <div>
-                <p>Hi hello</p>
-                <p>last sent ...</p>
-              </div>
-            </li>
-          </ul>
-          <div class="suggestion">
-            <div class="d-flex">
-              <div>tag 1</div>
-              <div>tag 2</div>
-              <div>tag 3</div>
-              <div>tag 4</div>
-            </div>
-          </div>
-        </div>
-        <div class="chat-input"></div>
-      </div> -->
+      <div class="container-fluid page-container">
+        page content goes here...
+      </div>
 
       <div class="sidebar chatSidebar d-flex flex-column" id="chatSidebar">
         <!-- Header -->
@@ -161,11 +125,11 @@
           <ul class="chat-messages list-unstyled m-0 p-0">
             <li class="chat-message sent mb-3">
               <div class="bubble">
-                <p class="m-0">السلام عليكم 👋</p>
+                <p class="m-0">مرحبا عدل</p>
               </div>
               <small class="text-muted d-block mt-1">Today, 11:28 AM</small>
             </li>
-            <li class="chat-message received mb-3">
+            <li class="chat-message received mb-3 d-none">
               <div class="bubble">
                 <p class="m-0">وعليكم السلام ورحمة الله وبركاته 🌟</p>
               </div>
@@ -177,16 +141,13 @@
           <div class="chat-suggestions mt-3">
             <div class="d-flex flex-wrap gap-2">
               <button class="btn btn-sm btn-outline-primary rounded-pill">
-                ما هي خدماتكم؟
+                حالة الطلب
               </button>
               <button class="btn btn-sm btn-outline-primary rounded-pill">
-                كيف أبدأ؟
+                طلباتى
               </button>
               <button class="btn btn-sm btn-outline-primary rounded-pill">
-                أحتاج مساعدة
-              </button>
-              <button class="btn btn-sm btn-outline-primary rounded-pill">
-                تواصل معي
+                المواعيد المتاحة
               </button>
             </div>
           </div>
@@ -198,8 +159,7 @@
             <textarea
               type="text"
               class="w-100 bg-white border-0"
-              placeholder="type something.."
-            ></textarea>
+              placeholder="ادخل استفسارك"></textarea>
 
             <div class="align-items-center d-flex justify-content-between">
               <div class="send-options">
