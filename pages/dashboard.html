@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POA</title>
+    <link rel="stylesheet" href="/assets/css/main.min.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+  </head>
+  <body dir="rtl">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="/assets/images/logo.png" alt="Small Logo" height="40" />
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"> خدمة الأونلاين</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> خدمات التحقق</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="#">خدمات الترخيص </a>
+              <svg
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a class="nav-link" href="#">تواصل معنا</a>
+              <svg
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.49902 1.81934L5.94678 6.67143L10.3945 1.81934"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </li>
+          </ul>
+
+          <button class="btn mx-2">English</button>
+          <button class="btn btn-primary rounded-5 mx-3 px-4">عربي</button>
+          <div class="dropdown">
+            <a
+              href="#"
+              class="d-flex align-items-center text-black text-decoration-none dropdown-toggle"
+              id="dropdownUser"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="/assets/images/user.png"
+                alt="User"
+                class="rounded-circle ms-3"
+                width="32"
+                height="32"
+              />
+              <span class="">على احمد </span>
+              <i class="bi bi-chevron-down mx-2 text-primary"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownUser">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-user me-2"></i> الملف الشخصي</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-cog me-2"></i> الإعدادات</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-sign-out-alt me-2"></i> تسجيل الخروج</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content sidebar-open" id="mainContent">
+      <div class="sub-header text-end p-3">
+        <div class="align-items-center d-flex gap-3">
+          <div>
+            <i
+              class="bg-white bi bi-arrow-bar-left chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
+            ></i>
+          </div>
+          <div>
+            <h3 class="mb-0 text-primary fw-bold">مرحبا علي</h3>
+            <h6 class="mb-0 text-primary">الثلاثاء، 20 أغسطس 2025</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid page-container">
+        <!-- PoA tree Step 1 -->
+        <div id="poa-step-1">
+          <!-- Section Header -->
+          <div class="section-header">
+            <h1 class="section-title">خدمات إدارة التوثيق</h1>
+            <p class="section-description">
+              تمكنك هذه الخدمة من التحقق من الوثائق الصادرة من وزارة العدل
+              إلكترونياً
+            </p>
+          </div>
+
+          <div class="container">
+            <!-- Services Cards Grid -->
+            <div class="row">
+              <div class="col-4">
+                <!-- Powers of Attorney Card -->
+                <div
+                  class="service-card"
+                  data-service="powers-of-attorney"
+                  onclick="activateServiceContainer('poa-step-2', 'poa-step-1')"
+                >
+                  <div class="service-icon-container">
+                    <img
+                      src="../../assets/images/img_icon_blue_900_62x62.svg"
+                      alt="التوكيلات"
+                      class="service-icon"
+                    />
+                  </div>
+                  <div class="service-content">
+                    <div class="service-info">
+                      <h3 class="service-name">التوكيلات</h3>
+                      <a href="#" class="service-link">
+                        <span class="service-link-text">عرض التفاصيل</span>
+                        <img
+                          src="../../assets/images/img_vector_47_blue_900.svg"
+                          alt="arrow"
+                          class="service-arrow"
+                          style="
+                            width: 12px;
+                            height: 12px;
+                            transform: rotate(0deg);
+                          "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <!-- Declarations Card -->
+                <div class="service-card" data-service="declarations">
+                  <div class="service-icon-container">
+                    <img
+                      src="../../assets/images/img_icon_blue_900.svg"
+                      alt="إقرارات"
+                      class="service-icon"
+                    />
+                  </div>
+                  <div class="service-content">
+                    <div class="service-info">
+                      <h3 class="service-name">إقرارات</h3>
+                      <a href="#" class="service-link">
+                        <span class="service-link-text">عرض التفاصيل</span>
+                        <img
+                          src="../../assets/images/img_vector_47_blue_900.svg"
+                          alt="arrow"
+                          class="service-arrow"
+                          style="
+                            width: 12px;
+                            height: 12px;
+                            transform: rotate(0deg);
+                          "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <!-- Company Contracts Card -->
+                <div class="service-card" data-service="company-contracts">
+                  <div class="service-icon-container">
+                    <img
+                      src="../../assets/images/img_icon.svg"
+                      alt="عقود شركات"
+                      class="service-icon"
+                    />
+                  </div>
+                  <div class="service-content">
+                    <div class="service-info">
+                      <h3 class="service-name">عقود شركات</h3>
+                      <a href="#" class="service-link">
+                        <span class="service-link-text">عرض التفاصيل</span>
+                        <img
+                          src="../../assets/images/img_vector_47_blue_900.svg"
+                          alt="arrow"
+                          class="service-arrow"
+                          style="
+                            width: 12px;
+                            height: 12px;
+                            transform: rotate(0deg);
+                          "
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="poa-step-2" style="display: none">
+          <div class="row">
+            <div class="col-8">big</div>
+            <div class="col-4">small</div>
+          </div>
+        </div>
+        <div id="poa-step-3"></div>
+        <div id="poa-step-4"></div>
+      </div>
+
+      <div class="sidebar chatSidebar d-flex flex-column" id="chatSidebar">
+        <!-- Header -->
+        <div
+          class="chat-header d-flex justify-content-between align-items-center px-3 py-2 mt-3"
+        >
+          <h5 class="m-0 fw-bold text-primary">تحدث مع <span>عدل</span></h5>
+          <i
+            class="bg-white bi bi-arrow-bar-right chatToggle cursor-pointer fs-5 p-1 px-2 rounded shadow-sm text-light-blue"
+          ></i>
+        </div>
+
+        <!-- Conversation body -->
+        <div class="chat-body flex-grow-1 overflow-auto px-3 py-3">
+          <ul class="chat-messages list-unstyled m-0 p-0">
+            <li class="chat-message sent mb-3">
+              <div class="bubble">
+                <p class="m-0">مرحبا عدل</p>
+              </div>
+              <small class="text-muted d-block mt-1">Today, 11:28 AM</small>
+            </li>
+            <li class="chat-message received mb-3 d-none">
+              <div class="bubble">
+                <p class="m-0">وعليكم السلام ورحمة الله وبركاته 🌟</p>
+              </div>
+              <small class="text-muted d-block mt-1">Today, 11:30 AM</small>
+            </li>
+          </ul>
+
+          <!-- Suggestions -->
+          <div class="chat-suggestions mt-3">
+            <div class="d-flex gap-2 mb-2">
+              <div>
+                <img src="/assets/icons/ai_icon.png" height="35" alt="" />
+              </div>
+              <div>
+                <p class="mb-0">مرحبا استاذ/ على</p>
+                <p class="mb-0">كيف يمكنني مساعدتك؟</p>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                حالة الطلب
+              </button>
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                طلباتى
+              </button>
+              <button class="btn btn-sm btn-outline-primary rounded-pill">
+                المواعيد المتاحة
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div class="chat-input p-2">
+          <div class="input">
+            <textarea
+              type="text"
+              class="w-100 bg-white border-0"
+              placeholder="ادخل استفسارك"
+            ></textarea>
+
+            <div class="align-items-center d-flex justify-content-between">
+              <div class="send-options">
+                <i class="bi bi-stars"></i>
+                <i class="bi bi-mic-fill"></i>
+                <i class="bi bi-plus"></i>
+              </div>
+              <div class="send-btn">
+                <img src="/assets/icons/send-icon.png" alt="" />
+              </div>
+            </div>
+            <div class="input-typing py-2">
+              <div class="d-flex gap-1">
+                <img src="/assets/icons/ai_icon.png" height="30" alt="" />
+                <span class="ai-span fw-bold">عدل</span>
+                <label class="text-black-50 fw-bold"> يرد...</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open chat button -->
+      <div class="open-chat-btn chatToggle">
+        <div class="open-chat-btn-container">
+          <div>
+            <img
+              class="vector"
+              src="/assets/icons/chat_icon_white.png"
+              alt=""
+            />
+            <img class="vector" src="/assets/icons/ai_icon_white.png" alt="" />
+          </div>
+          <div class="mx-5 fw-bolder fs-4">تحدّث إلى عدل</div>
+          <div>
+            <img
+              class="user-icon"
+              src="/assets/icons/ai_user_icon.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+  </body>
+</html>

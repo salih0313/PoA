@@ -11,3 +11,8 @@ $(document).ready(function () {
     });
   });
 });
+
+function activateServiceContainer(show, hide) {
+  $(`#${show}`).show();
+  $(`#${hide}`).hide();
+}

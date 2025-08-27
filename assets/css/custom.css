@@ -65,7 +65,7 @@
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: "Tajawal", sans-serif;
   font-style: normal;
 }
@@ -213,32 +213,34 @@ body {
 .auth-option-container:hover {
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.4);
 }
-.auth-page .open-chat {
+.auth-page .open-chat-btn {
   left: 38%;
 }
-.open-chat {
+.open-chat-btn {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 60px;
   cursor: pointer;
   z-index: 1000;
   transition: all 0.3s ease;
-  border-radius: 50px;
-  opacity: 1;
-  background: #393939;
-  border: 5px solid var(--bs-primary);
-  padding: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border: 5px solid linear-gradient(90deg, #3573b7 0%, #71b5f5 100%);
+  background: linear-gradient(116deg, #4a84c1 0%, #c0dfff 133.07%);
 }
 
-.open-chat .user-icon {
+.open-chat-btn-container {
+  margin: 4px;
+  border-radius: 50px;
+  color: white;
+  background: #393939;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.open-chat-btn-container .user-icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -247,7 +249,7 @@ body {
   background: #ffffff;
 }
 
-.open-chat .vector {
+.open-chat-btn-container .vector {
   width: 30px;
   height: 30px;
   margin-right: 8px;
@@ -413,7 +415,9 @@ body {
 }
 
 .main-content .page-container {
-  padding: 20px;
+  padding: 20px;  
+  margin-bottom: 80px;
+  overflow-y: auto;
 }
 
 .chatSidebar {
@@ -528,4 +532,139 @@ body {
   padding: 10px;
   background: #ffffff;
   border: 1px solid #dae1e5;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 66px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 2.857142857142857em;
+  color: var(--bs-primary);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.section-description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6em;
+  color: var(--bs-dark);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Service Card */
+.service-card {
+  width: 400px;
+  height: 446px;
+  background: linear-gradient(180deg, #e8f0f9 0%, #ffffff 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Service Icon Container */
+.service-icon-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(15, 55, 153, 0.1) 100%
+  );
+  border: 1px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(15, 55, 153, 0.2) 100%
+  );
+  border-radius: 12.6px;
+  padding: 24px;
+  margin-top: 156px;
+}
+
+.service-icon {
+  width: 62px;
+  height: 62px;
+}
+
+/* Service Content */
+.service-content {
+  background-image: url("../images/img_mask_group.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 98px 40px;
+  margin-top: -66px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 58px;
+  text-align: center;
+  direction: rtl;
+}
+
+.service-name {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3333333333333333em;
+  color: #000000;
+  text-align: center;
+  padding: 0 56px;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+/* Service Link */
+.service-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  direction: rtl;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.service-link:hover {
+  transform: translateY(-2px);
+}
+
+.service-arrow {
+  width: 5.21px;
+  height: 11px;
+  transform: scaleX(-1);
+}
+
+.service-link-text {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.6em;
+  color: #0033a0;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-align: right;
 }
