@@ -91,6 +91,24 @@ body {
   cursor: pointer;
 }
 
+.form-border-label {
+  position: relative;
+}
+
+.form-border-label label {
+  position: absolute;
+  right: 10px;
+  background: white;
+  top: -15px;
+  padding: 2px 8px 0 8px;
+}
+
+.form-border-label input {
+  border: 1.5px solid var(--bs-primary) !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+}
+
 /* Utilization End ###############################  */
 
 /* Login page */
