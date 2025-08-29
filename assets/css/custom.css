@@ -68,6 +68,7 @@ body {
   /* overflow: hidden; */
   font-family: "Tajawal", sans-serif;
   font-style: normal;
+  background: linear-gradient(247.31deg, #ffffff 0%, #e8f0f9 100%);
 }
 
 /* Utilization */
@@ -106,7 +107,18 @@ body {
 .form-border-label input {
   border: 1.5px solid var(--bs-primary) !important;
   border-radius: 5px !important;
-  padding: 10px !important;
+  /* padding: 10px !important; */
+}
+
+[dir="rtl"] .form-check .form-check-input {
+  float: none;
+  margin-left: 0;
+}
+.ff-tajawal {
+  font-family: "Tajawal", sans-serif;
+}
+.ff-din-next-lt-arabic {
+  font-family: "din-next-lt-arabic", sans-serif;
 }
 
 /* Utilization End ###############################  */
@@ -415,7 +427,7 @@ body {
 }
 
 .main-content .page-container {
-  padding: 20px;  
+  padding: 20px;
   margin-bottom: 80px;
   overflow-y: auto;
 }
@@ -667,4 +679,224 @@ body {
   letter-spacing: 0;
   text-decoration: none;
   text-align: right;
+}
+
+/* Service Card Horizontal*/
+
+.horiz-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-horiz {
+  background: linear-gradient(179.98deg, #e8f0f9 -1.43%, #ffffff 99.98%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* Service Icon Container */
+.service-card-horiz .service-icon-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(15, 55, 153, 0.1) 100%
+  );
+  border: 1px solid transparent;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(15, 55, 153, 0.2) 100%
+  );
+  border-radius: 12.6px;
+  padding: 24px;
+  margin: 50px !important;
+  margin-bottom: 0px !important;
+}
+
+.service-card-horiz .service-icon {
+  width: 62px;
+  height: 62px;
+}
+
+.service-card-horiz .brand-mask {
+  background-image: url(../images/img_mask_group.png);
+  padding: 98px 40px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 87%;
+  left: 0;
+}
+
+.service-card-horiz .service-name {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin: 30px auto;
+  padding: 0 !important;
+  letter-spacing: 0;
+}
+
+.bg-vector-container {
+  background: linear-gradient(179.98deg, #e8f0f9 -1.43%, #ffffff 99.98%);
+  background-image: url(../icons/logo_mask.png),
+    linear-gradient(179.98deg, #e8f0f9 -1.43%, #ffffff 99.98%);
+  background-repeat: no-repeat;
+  background-size: 55% auto, cover;
+  background-position: left bottom;
+}
+
+/* Form content */
+
+.form-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  z-index: 999;
+}
+
+.form-title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.form-title-divider {
+  background: linear-gradient(270deg, rgba(0, 51, 160, 0.75) 0%, #0033a0 100%);
+  height: 6px;
+  width: 120px;
+  border-radius: 10px;
+  margin: 12px;
+}
+
+.form-card {
+  box-shadow: 0px 8px 8px -4px #006ed208;
+  box-shadow: 0px 20px 24px -4px #006ed214;
+  border-radius: 16px;
+  opacity: 1;
+}
+
+.form-card-title {
+  border-bottom: 1px solid var(--Brand-Blue-25, #0033a040);
+  width: 866;
+  height: 120;
+  opacity: 1;
+  border-bottom-width: 1px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  gap: 16px;
+  padding-top: 32px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+  padding-left: 24px;
+}
+
+.form-card-title .icon {
+  background: linear-gradient(247.31deg, #e8f0f9 0%, #ffffff 100%);
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+.form-card-title .icon img {
+  height: 26px;
+}
+.form-card-body {
+  background-color: white;
+  gap: 20px;
+  opacity: 1;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  padding: 24px;
+}
+
+/* Civil Id Verification */
+
+.verify-accordion {
+}
+
+.verify-accordion .accordion-item {
+  margin: 10px auto;
+  width: 886;
+  height: 348;
+  border-radius: 16px;
+  opacity: 1;
+  background: var(--Secondary-White-100, #ffffff);
+  box-shadow: 0px 8px 8px -4px #10182808;
+  box-shadow: 0px 20px 24px -4px #10182814;
+}
+
+.verify-accordion .accordion-item .accordion-header {
+  width: 886;
+  height: 134;
+  gap: 16px;
+  opacity: 1;
+  padding-top: 32px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+  padding-left: 24px;
+  border-bottom-width: 1px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--Brand-Blue-25, #0033a040);
+}
+
+.verify-accordion .accordion-item .accordion-header.collapsed {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-bottom-width: 0;
+}
+
+.verify-accordion .accordion-item .accordion-header .icon {
+  background: linear-gradient(247.31deg, #e8f0f9 0%, #ffffff 100%);
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+.verify-accordion .accordion-item .accordion-header .icon img {
+  height: 26px;
+}
+
+.verify-accordion .accordion-item .accordion-body {
+  width: 866;
+  height: 214;
+  gap: 20px;
+  opacity: 1;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.civilId-info {
+}
+
+.civilId-info label {
+  color: var(--bs-secondary);
+}
+
+.civilId-info .input {
+  border-radius: 8px;
+  padding: 8px 12px;
+  opacity: 1;
+  border-width: 1px;
+  background: #0033a01a;
+  border: 1px solid var(--Brand-Blue-25, #0033a040);
 }
