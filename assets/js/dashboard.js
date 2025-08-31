@@ -2,6 +2,7 @@ $(document).ready(function () {
   // Toggle chat sidebar
   $(".chatToggle").on("click", function () {
     $("#mainContent").toggleClass("sidebar-open");
+    $(".open-chat-btn").toggle();
   });
 
   document.querySelectorAll(".chat-suggestions button").forEach((btn) => {
@@ -11,3 +12,8 @@ $(document).ready(function () {
     });
   });
 });
+
+function activateServiceContainer(show, hide) {
+  $(`#${show}`).show();
+  $(`#${hide}`).hide();
+}
