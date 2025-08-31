@@ -1,3 +1,32 @@
+:root {
+  --primary-color: #0033a0;
+  --text-dark: #000000;
+  --card-gradient-1: linear-gradient(
+    180deg,
+    rgba(232, 240, 249, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  --card-gradient-2: linear-gradient(
+    179deg,
+    rgba(232, 240, 249, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  --decoration-blue: #4a65b2;
+  --decoration-light: rgba(193, 204, 229, 0.15);
+  --icon-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(15, 55, 153, 1) 100%
+  );
+  --icon-border-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(15, 55, 153, 1) 100%
+  );
+  --border-light: #e5efff;
+  --brand-blue-25: #0033a040;
+}
+
 /* Fonts */
 
 /* Tajawal ExtraLight */
@@ -80,8 +109,18 @@ body {
   background-color: #2f64c0;
 }
 
+.border-brand-blue-25 {
+  border: 1px solid var(--brand-blue-25);
+}
+
 .bi {
   font-family: sans-serif;
+}
+
+.icon-bg {
+  background: linear-gradient(247.31deg, #e8f0f9 0%, #ffffff 100%);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .dropdown-toggle::after {
@@ -885,9 +924,6 @@ body {
   background: #ffffff;
 }
 
-.civilId-info {
-}
-
 .civilId-info label {
   color: var(--bs-secondary);
 }
@@ -899,4 +935,33 @@ body {
   border-width: 1px;
   background: #0033a01a;
   border: 1px solid var(--Brand-Blue-25, #0033a040);
+}
+
+.popular-poa-card {
+  width: 405;
+  height: 188;
+  border-radius: 12px;
+  opacity: 1;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0px 8px 8px -4px #10182808;
+  box-shadow: 0px 20px 24px -4px #0033a014;
+}
+
+.result-container {
+  border-radius: 5px;
+  gap: 18px;
+  opacity: 1;
+  padding-top: 9px;
+  padding-right: 20px;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  border-width: 1px;
+  background: #ffffff;
+  border: 1px solid #d1dadf;
+  box-shadow: 0px 4px 10px 0px #00000012;
+}
+
+.result-container .popular-poa-card {
+  border: 1px solid #e5efff;
 }
