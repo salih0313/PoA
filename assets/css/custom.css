@@ -168,6 +168,10 @@ body {
   font-family: "din-next-lt-arabic", sans-serif;
 }
 
+.brand-bg-light {
+  background-color: #fcfaff;
+}
+
 /* Utilization End ###############################  */
 
 /* Login page */
